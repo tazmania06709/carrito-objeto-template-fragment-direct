@@ -1,0 +1,232 @@
+// if (condicion) {
+//     // bloque verdadero
+// } else {
+//     // bloque falso
+// }
+//----------------Ejemplo 1-------------
+// let textJavascript = prompt("Escriba 'javascript'");
+
+// if (textJavascript === "javascript") {
+//     console.log("Lo escribiste super bien!");
+// } else {
+//     console.log("Lo escribiste mal");
+// }
+//----------------Ejemplo 2-------------
+// let numUsuario = prompt("Ingrese numero del 1 al 10");
+
+// console.log(numUsuario + " Es: " + typeof numUsuario);
+
+// console.log(parseInt(numUsuario));
+
+// if (parseInt(numUsuario) <= 10) {
+//     // Sentencia true
+//     console.log("Genial!!");
+// } else {
+//     // Sentencia false
+//     console.log("Super mal!!");
+// }
+//-------------------Ejemplo Switch --------------
+// let opcionUser = prompt(`
+// Elija una opción:
+// 1: Libros
+// 2: Películas
+// 3: Juegos
+// `);
+
+// switch (opcionUser) {
+//     case "1":
+//         console.log("Principito");
+//         break;
+//     case "2":
+//         console.log("Matrix");
+//         break;
+//     case "3":
+//         console.log("NFS");
+//         break;
+//     default:
+//         console.log("Opción no válida");
+//         break;
+// }
+//-----------------Ejemplo While-----------------
+// let numero = 0;
+// while (numero <= 10) {
+//     console.log(numero);
+//     numero++; //numero = numero + 1;
+// }
+// console.log("FIN: " + numero);
+//-----------------Ejemplo  Random----------
+// Retorna un entero aleatorio entre min (incluido) y max (excluido)
+// ¡Usando Math.round() te dará una distribución no-uniforme!
+// function getRandomInt(min, max) {
+//     return Math.floor(Math.random() * (max - min)) + min;
+// }
+//-----Paso 1-------------
+// let numeroMaquina = Math.floor(Math.random() * (10 - 1)) + 1;
+// console.log(numeroMaquina);
+// let numeroUser = parseInt(prompt("Adivine número del 1 al 10"));
+
+// let vidas = 3;
+
+// while (numeroMaquina !== numeroUser && vidas > 1) {
+    
+//     let mensaje = (numeroMaquina > numeroUser) ? 'El numeroMaquina es Mayor' : 'El numeroMaquina es menor';
+    
+//     console.log("Te equivocaste! " + mensaje);
+//     vidas--;
+//     numeroUser = parseInt(prompt("Vuelve a intentarlo, tus vidas: " + vidas));
+// }
+
+// if (numeroMaquina === numeroUser) {
+//     console.log("GANASTE 😍");
+// } else {
+//     console.log("PERDISTE, el número era: " + numeroMaquina, "😜");
+// }
+//---------------------- posicion del video 01 fundamentos programacion 02:56:33---------------
+
+//let frutas = ["platanos", "sandias", "peritas","uvas"];
+// console.log(frutas);
+// console.log(frutas.length);
+// console.log(frutas[0]);
+// console.log(frutas[1]);
+// console.log(frutas[2]);
+// console.log(frutas[3]);
+// console.log(frutas[4]);
+// for (let i = 0; i < frutas.length; i++ ){
+//  console.log(frutas[i]);
+// }
+
+// for (let fruta of frutas){
+//    console.log(fruta);
+// }
+//  let nombreUsuario = "Ignacio";
+//  let edad = 50;
+//  for(let letra of nombreUsuario)
+//  {
+//     console.log(letra);
+//  }
+
+//-------------------------------------------Práctica: carrito de compras
+//#
+
+    // El objetivo es crear una aplicación que nos permita ir agregando elementos a un carrito de compras: ver ejemplo
+    // confirm(): muestra una ventana de diálogo con un mensaje opcional y dos botones, Aceptar (true) y Cancelar (false).
+// const frutas = []
+// const fruta = prompt('🍒 Feria Market 🍉 ¿qué fruta desea comprar?')
+
+// frutas.push(fruta)
+
+// while (confirm('¿Desea agregar otro elemento al 🛒?')) {
+//     const fruta = prompt('¿qué fruta desea comprar?')
+//     frutas.push(fruta)
+// }
+
+// console.log('Ustede compró: ')
+// for (let fruta of frutas) {
+//     console.log(fruta)
+// }
+// //-------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------Función declarativa:
+js
+
+// declaro la función
+function numAleatorioRango(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+// invoco la función
+console.log(numAleatorioRango(1, 11))
+
+//------------------------------------------------------------------Función expresada:
+
+// Anónima (expresada en una variable):
+// js
+
+const miNumero = function (min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+console.log(miNumero(1, 11))
+
+//----------------------------------------Diferencia declarativa vs Expresada:
+js
+
+console.log(miNumero(1, 11))
+const miNumero = function (min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+//-------------------Arrow functions
+Arrow functions: Una expresión de función flecha es una alternativa compacta a una expresión de función tradicional
+
+js
+
+const miNumeroFlecha = (max) => {
+    return Math.floor(Math.random() * (max - 1)) + 1;
+}
+
+console.log(miNumeroFlecha(11))
+
+//----------------------------------------------Reducción:
+js
+
+const miNumeroFlecha = max => Math.floor(Math.random() * (max - 1)) + 1;
+        
+console.log(miNumeroFlecha(11))
+
+//-------------------------------------------Reducción con paréntesis:
+js
+
+const miNumeroFlecha = max => (Math.floor(Math.random() * (max - 1)) + 1);
+        
+console.log(miNumeroFlecha(11))
+
+//--------------------------------------------Más parámetros:
+js
+
+const miNumeroFlecha = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+console.log(miNumeroFlecha(1, 11))
+
+//------------------------------------Parámetros opcionales (también se puede hacer con function):
+js
+
+const miNumeroFlecha = (min = 1, max = 10) => Math.floor(Math.random() * (max - min)) + min;
+
+console.log(miNumeroFlecha())
+
+//-------------------------------------------------------Arrow & forEach()
+#
+
+    forEach(): El método forEach() ejecuta la función indicada una vez por cada elemento del array.
+
+js
+
+let frutas = ["manzana", "sandía", "pera"]
+frutas.forEach(fruta => console.log(fruta))
+
+js
+
+let frutas = ["manzana", "sandía", "pera"]
+frutas.forEach((fruta, index, array) => {
+    console.log(index)
+    console.log(fruta)
+    console.log(array)
+})
+
+//-----------------------------------------------------En nuestro ejemplo de carrito de compras:
+js
+
+const carrito = []
+const fruta = prompt('🍒 Feria Market 🍉 ¿qué fruta desea comprar?')
+
+carrito.push(fruta)
+
+while (confirm('¿Desea agregar otro elemento al 🛒?')) {
+    const fruta = prompt('¿qué fruta desea comprar?')
+    carrito.push(fruta)
+}
+
+console.log('Ustede compró: ')
+carrito.forEach((fruta, index) => (
+    console.log(`${index + 1}: ${fruta}`)
+))
+
